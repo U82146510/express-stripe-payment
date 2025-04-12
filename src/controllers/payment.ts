@@ -25,7 +25,7 @@ export const payment = async (req: Request, res: Response, next: NextFunction) =
           price_data: {
             currency: 'usd',
             product_data: { name: 'Top-up Balance' },
-            unit_amount: Math.round(Number(amount)), // amount in cents
+            unit_amount: Math.round(Number(amount)), 
           },
           quantity: 1,
         },
@@ -37,7 +37,7 @@ export const payment = async (req: Request, res: Response, next: NextFunction) =
 
     res.json({ url: session.url });
   } catch (error) {
-    console.error('❌ Stripe error:', error);
+    console.error('Stripe error:', error);
     next(error);
   }
 };
