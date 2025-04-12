@@ -18,7 +18,9 @@ if(!hook){
     process.exit(1);
 }
 
-const stripe = new Stripe(stripe_api)
+const stripe = new Stripe(stripe_api, {
+    apiVersion: '2025-02-24.acacia',
+  });
 
 export const webhook = (req:Request,res:Response,next:NextFunction)=>{
     const sig = req.headers['stripe-signature'];

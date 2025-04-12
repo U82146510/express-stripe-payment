@@ -1,6 +1,7 @@
 import {payment} from '../controllers/payment';
-import { Router } from 'express';
-import bodyParser from 'body-parser';
+import express,{ Router } from 'express';
+
 
 export const user:Router = Router();
+user.use(express.json());
 user.post('/checkout',payment);
